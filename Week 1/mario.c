@@ -7,8 +7,12 @@ int main(void)
 {       
     int i;
     int h; //height
-    
-    h = get_int("Height: ");   
+        
+    do
+    {
+        h = get_int("Height: ");
+    }    
+    while (h < 1 || 8 < h);
     
     for (i = 1; i <= h; i++)
     {        
