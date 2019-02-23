@@ -1,42 +1,33 @@
 #include <stdio.h>
 #include <cs50.h>
 
+void print_symbols(string symbol, int number);
+
 int main(void)
-{    
-    int height;
+{       
     int i;
+    int h; //height
     
-    height = get_int("Height: ");   
+    h = get_int("Height: ");   
     
-    for (i = 1; i <= height; i++)
-    {
-        int j;
-        int count_hashes = i;
-        int count_spaces = height - i;        
-        
-        // print spaces
-        for (j = 1; j <= count_spaces; j++)
-        {
-            printf(" ");
-        }        
-        
-        // print hashes
-        for (j = 1; j <= count_hashes; j++)
-        {
-            printf("#");
-        } 
-        
-        // print middle spaces
-        printf("  ");
-        
-        // print hashes
-        for (j = 1; j <= count_hashes; j++)
-        {
-            printf("#");
-        } 
+    for (i = 1; i <= h; i++)
+    {        
+        print_symbols(" ", h - i);
+        print_symbols("#", i);
+        print_symbols(" ", 2);
+        print_symbols("#", i);
         
         printf("\n");
     }
 
 }
 
+void print_symbols(string symbol, int number)
+{
+    int i;
+    
+    for (i = 1; i <= number; i++)
+        {
+            printf("%s", symbol);
+        } 
+}
